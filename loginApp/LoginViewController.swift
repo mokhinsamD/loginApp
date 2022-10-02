@@ -9,14 +9,11 @@ import UIKit
 
 class LoginViewController: UIViewController {
 
+    //MARK: - IB Outlets
     @IBOutlet var userTextField: UITextField!
     @IBOutlet var passwordTextField: UITextField!
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-    }
-    
+    //MARK: - Override Methods
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let welcomeVC = segue.destination as? WelcomeViewController else { return }
         welcomeVC.userName = userTextField.text
@@ -51,7 +48,6 @@ class LoginViewController: UIViewController {
         userTextField.text = ""
         passwordTextField.text = ""
     }
-    
 }
 
 //MARK: - UIAlertController

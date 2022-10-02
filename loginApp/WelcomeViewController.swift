@@ -21,6 +21,4 @@ class WelcomeViewController: UIViewController {
     private func greetingFor(_ name: String) {
         welcomeLabel.text = "Welcome, \(name)!"
     }
-
-
 }
