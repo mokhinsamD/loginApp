@@ -13,6 +13,10 @@ class LoginViewController: UIViewController {
     @IBOutlet var userTextField: UITextField!
     @IBOutlet var passwordTextField: UITextField!
     
+    //MARK: - Private Property
+    private let userName = "Alexey"
+    private let password = "1234"
+    
     //MARK: - Override Methods
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let welcomeVC = segue.destination as? WelcomeViewController else { return }
@@ -26,25 +30,24 @@ class LoginViewController: UIViewController {
 
     //MARK: - IB Actions
     @IBAction func logInButtonDidPressed() {
-        if userTextField.text != "Alexey" || passwordTextField.text != "1234" {
+        guard userTextField.text != userName || passwordTextField.text != password else {
             showAlert(
                 withTitle: "Invalid login or passworg",
-                andMessage: "Please, enter correct login and password."
+                andMessage: "Please, enter correct login and password.",
+                textField: passwordTextField
             )
-            passwordTextField.text = ""
+            return
         }
+        performSegue(withIdentifier: "showWelcomeVC", sender: nil)
     }
     
-    @IBAction func forgotUserNameButtonDidPressed() {
-        showAlert(withTitle: "Oops!", andMessage: "Your name is Alexey 😇")
-    }
-    
-    @IBAction func forgorPasswordButtonDidPressed() {
-        showAlert(withTitle: "Oops!", andMessage: "Your password is 1234 🤫")
+    @IBAction func forgotRegisterData(_ sender: UIButton) {
+        sender.tag == 0
+        ? showAlert(withTitle: "Oops!", andMessage: "Your name is \(userName) 😇")
+        : showAlert(withTitle: "Oops!", andMessage: "Your password is \(password) 🤫")
     }
     
     @IBAction func unwind(for segue: UIStoryboardSegue) {
-        guard let _ = segue.source as? WelcomeViewController else { return }
         userTextField.text = ""
         passwordTextField.text = ""
     }
@@ -52,14 +55,19 @@ class LoginViewController: UIViewController {
 
 //MARK: - UIAlertController
 extension UIViewController {
-    func showAlert(withTitle title: String, andMessage message: String) {
+    func showAlert(
+        withTitle title: String, andMessage message: String, textField: UITextField? = nil) {
         let alert = UIAlertController(
             title: title,
             message: message,
             preferredStyle: .alert
         )
+            //по нажатию на ОК стирается поле пароля, происходит код при нажатии на ОК
+        let okAction = UIAlertAction(title: "OK", style: .default) { _ in
+            textField?.text = ""
+        }
         present(alert, animated: true)
-        alert.addAction(UIAlertAction(title: "OK", style: .default))
+        alert.addAction(okAction)
     }
 }
 
