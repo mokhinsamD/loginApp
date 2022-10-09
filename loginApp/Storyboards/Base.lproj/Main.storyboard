@@ -186,6 +186,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="User Name Bio" id="Usk-by-lec"/>
                     <connections>
+                        <outlet property="aboutSelfLabel" destination="cnL-sX-GGy" id="rUO-Je-3nL"/>
                         <outlet property="bioNavigationBar" destination="Usk-by-lec" id="kTB-lb-AMG"/>
                     </connections>
                 </viewController>
@@ -228,8 +229,8 @@
                                     <constraint firstAttribute="width" secondItem="Uoz-ke-EHc" secondAttribute="height" multiplier="1:1" id="xub-al-y0T"/>
                                 </constraints>
                             </imageView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="AVM-Ef-ONT">
-                                <rect key="frame" x="16" y="297" width="217.5" height="158"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="AVM-Ef-ONT">
+                                <rect key="frame" x="16" y="297" width="217.5" height="162.5"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="4qT-iu-itC">
                                         <rect key="frame" x="0.0" y="0.0" width="100.5" height="20.5"/>
@@ -249,7 +250,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="qfq-Pl-z9q">
-                                        <rect key="frame" x="0.0" y="27.5" width="164" height="20.5"/>
+                                        <rect key="frame" x="0.0" y="35.5" width="164" height="20.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Фамилия:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HzR-Fh-6dO">
                                                 <rect key="frame" x="0.0" y="0.0" width="77.5" height="20.5"/>
@@ -265,25 +266,8 @@
                                             </label>
                                         </subviews>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="YFj-2w-O9y">
-                                        <rect key="frame" x="0.0" y="55" width="169" height="20.5"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Телеграм:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U3Q-ib-zif">
-                                                <rect key="frame" x="0.0" y="0.0" width="81.5" height="20.5"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="telegram" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LmR-dp-ScW">
-                                                <rect key="frame" x="101.5" y="0.0" width="67.5" height="20.5"/>
-                                                <fontDescription key="fontDescription" type="italicSystem" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                        </subviews>
-                                    </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="PVt-g5-3Rb">
-                                        <rect key="frame" x="0.0" y="82.5" width="186" height="20.5"/>
+                                        <rect key="frame" x="0.0" y="71" width="186" height="20.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Цвет волос:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Ae-4E-F8z">
                                                 <rect key="frame" x="0.0" y="0.0" width="94.5" height="20.5"/>
@@ -300,7 +284,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Iej-UB-MXe">
-                                        <rect key="frame" x="0.0" y="110" width="179.5" height="20.5"/>
+                                        <rect key="frame" x="0.0" y="106.5" width="179.5" height="20.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Цвет глаз:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M3z-kO-ys4">
                                                 <rect key="frame" x="0.0" y="0.0" width="81.5" height="20.5"/>
@@ -317,7 +301,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="1zX-U6-N8C">
-                                        <rect key="frame" x="0.0" y="137.5" width="217.5" height="20.5"/>
+                                        <rect key="frame" x="0.0" y="142" width="217.5" height="20.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Род деятельности:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Te6-g3-pGu">
                                                 <rect key="frame" x="0.0" y="0.0" width="148.5" height="20.5"/>
@@ -364,7 +348,6 @@
                         <outlet property="hairColorLabel" destination="aYC-qN-c6c" id="SuA-o7-4kq"/>
                         <outlet property="nameLabel" destination="vWn-1a-oE8" id="kO8-Ru-yTO"/>
                         <outlet property="surnameLabel" destination="P1U-ZP-gbR" id="A9n-Da-rrB"/>
-                        <outlet property="telegramLabel" destination="LmR-dp-ScW" id="3hu-Ed-9O1"/>
                         <outlet property="userNavigationBar" destination="juL-wy-Ep9" id="umt-Nu-uaY"/>
                     </connections>
                 </viewController>
@@ -399,7 +382,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="avatarUser" width="300" height="300"/>
+        <image name="avatarUser" width="600" height="800"/>
         <image name="person.fill" catalog="system" width="128" height="120"/>
         <image name="viewBackground" width="1000" height="641"/>
         <systemColor name="systemBackgroundColor">

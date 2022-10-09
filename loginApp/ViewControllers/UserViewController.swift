@@ -13,7 +13,6 @@ class UserViewController: UIViewController {
     
     @IBOutlet var nameLabel: UILabel!
     @IBOutlet var surnameLabel: UILabel!
-    @IBOutlet var telegramLabel: UILabel!
     @IBOutlet var hairColorLabel: UILabel!
     @IBOutlet var eyesColorLabel: UILabel!
     @IBOutlet var careerLabel: UILabel!
@@ -29,7 +28,6 @@ class UserViewController: UIViewController {
     
         nameLabel.text = user.person.name
         surnameLabel.text = user.person.surname
-        telegramLabel.text = user.person.telegram
         hairColorLabel.text = user.person.hairColor
         eyesColorLabel.text = user.person.eyesColor
         careerLabel.text = user.person.career
